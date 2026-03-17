@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Panel | LifeLine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-grid">
+        <aside class="sidebar">
+            <div class="logo" style="margin-bottom: 40px;"><i class="fas fa-heartbeat"></i> LifeLine</div>
+            <nav class="nav-links" style="display: flex; flex-direction: column; gap: 20px;">
+                <a href="#"><i class="fas fa-plus-circle"></i> New Request</a>
+                <a href="#"><i class="fas fa-history"></i> My History</a>
+                <a href="index.html" onclick="localStorage.clear()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header style="display: flex; justify-content: space-between; margin-bottom: 30px;">
+                <h1>Welcome Back, <span id="userName" style="color: var(--primary);">User</span></h1>
+                <button onclick="getLocation()" class="btn-main"><i class="fas fa-location-arrow"></i> Get My Location</button>
+            </header>
+
+            <div class="card">
+                <h3>Request Emergency Help</h3>
+                <form id="emergencyForm" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
+                    <select id="resourceType">
+                        <option value="AMBULANCE">Ambulance</option>
+                        <option value="BLOOD">Blood Donor</option>
+                        <option value="ICU">ICU Bed</option>
+                    </select>
+                    <input type="text" id="lat" placeholder="Latitude" readonly>
+                    <input type="text" id="lng" placeholder="Longitude" readonly>
+                    <button type="button" onclick="sendRequest()" class="btn-main">Send Alert</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h3>Your Recent Activity</h3>
+                <table id="historyTable">
+                    <thead>
+                        <tr><th>Type</th><th>Status</th><th>Time</th></tr>
+                    </thead>
+                    <tbody id="historyBody"></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="user.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Panel | LifeLine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-grid">
+        <aside class="sidebar">
+            <div class="logo" style="margin-bottom: 40px;"><i class="fas fa-heartbeat"></i> LifeLine</div>
+            <nav class="nav-links" style="display: flex; flex-direction: column; gap: 20px;">
+                <a href="#"><i class="fas fa-plus-circle"></i> New Request</a>
+                <a href="#"><i class="fas fa-history"></i> My History</a>
+                <a href="index.html" onclick="localStorage.clear()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header style="display: flex; justify-content: space-between; margin-bottom: 30px;">
+                <h1>Welcome Back, <span id="userName" style="color: var(--primary);">User</span></h1>
+                <button onclick="getLocation()" class="btn-main"><i class="fas fa-location-arrow"></i> Get My Location</button>
+            </header>
+
+            <div class="card">
+                <h3>Request Emergency Help</h3>
+                <form id="emergencyForm" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
+                    <select id="resourceType">
+                        <option value="AMBULANCE">Ambulance</option>
+                        <option value="BLOOD">Blood Donor</option>
+                        <option value="ICU">ICU Bed</option>
+                    </select>
+                    <input type="text" id="lat" placeholder="Latitude" readonly>
+                    <input type="text" id="lng" placeholder="Longitude" readonly>
+                    <button type="button" onclick="sendRequest()" class="btn-main">Send Alert</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h3>Your Recent Activity</h3>
+                <table id="historyTable">
+                    <thead>
+                        <tr><th>Type</th><th>Status</th><th>Time</th></tr>
+                    </thead>
+                    <tbody id="historyBody"></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="user.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Panel | LifeLine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-grid">
+        <aside class="sidebar">
+            <div class="logo" style="margin-bottom: 40px;"><i class="fas fa-heartbeat"></i> LifeLine</div>
+            <nav class="nav-links" style="display: flex; flex-direction: column; gap: 20px;">
+                <a href="#"><i class="fas fa-plus-circle"></i> New Request</a>
+                <a href="#"><i class="fas fa-history"></i> My History</a>
+                <a href="index.html" onclick="localStorage.clear()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header style="display: flex; justify-content: space-between; margin-bottom: 30px;">
+                <h1>Welcome Back, <span id="userName" style="color: var(--primary);">User</span></h1>
+                <button onclick="getLocation()" class="btn-main"><i class="fas fa-location-arrow"></i> Get My Location</button>
+            </header>
+
+            <div class="card">
+                <h3>Request Emergency Help</h3>
+                <form id="emergencyForm" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
+                    <select id="resourceType">
+                        <option value="AMBULANCE">Ambulance</option>
+                        <option value="BLOOD">Blood Donor</option>
+                        <option value="ICU">ICU Bed</option>
+                    </select>
+                    <input type="text" id="lat" placeholder="Latitude" readonly>
+                    <input type="text" id="lng" placeholder="Longitude" readonly>
+                    <button type="button" onclick="sendRequest()" class="btn-main">Send Alert</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h3>Your Recent Activity</h3>
+                <table id="historyTable">
+                    <thead>
+                        <tr><th>Type</th><th>Status</th><th>Time</th></tr>
+                    </thead>
+                    <tbody id="historyBody"></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="user.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Panel | LifeLine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-grid">
+        <aside class="sidebar">
+            <div class="logo" style="margin-bottom: 40px;"><i class="fas fa-heartbeat"></i> LifeLine</div>
+            <nav class="nav-links" style="display: flex; flex-direction: column; gap: 20px;">
+                <a href="#"><i class="fas fa-plus-circle"></i> New Request</a>
+                <a href="#"><i class="fas fa-history"></i> My History</a>
+                <a href="index.html" onclick="localStorage.clear()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header style="display: flex; justify-content: space-between; margin-bottom: 30px;">
+                <h1>Welcome Back, <span id="userName" style="color: var(--primary);">User</span></h1>
+                <button onclick="getLocation()" class="btn-main"><i class="fas fa-location-arrow"></i> Get My Location</button>
+            </header>
+
+            <div class="card">
+                <h3>Request Emergency Help</h3>
+                <form id="emergencyForm" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
+                    <select id="resourceType">
+                        <option value="AMBULANCE">Ambulance</option>
+                        <option value="BLOOD">Blood Donor</option>
+                        <option value="ICU">ICU Bed</option>
+                    </select>
+                    <input type="text" id="lat" placeholder="Latitude" readonly>
+                    <input type="text" id="lng" placeholder="Longitude" readonly>
+                    <button type="button" onclick="sendRequest()" class="btn-main">Send Alert</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h3>Your Recent Activity</h3>
+                <table id="historyTable">
+                    <thead>
+                        <tr><th>Type</th><th>Status</th><th>Time</th></tr>
+                    </thead>
+                    <tbody id="historyBody"></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="user.js"></script>
+</body>
+</html>

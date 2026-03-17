@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Provider Dashboard | LifeLine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-grid">
+        <aside class="sidebar">
+            <div class="logo" style="margin-bottom: 40px;"><i class="fas fa-heartbeat"></i> LifeLine</div>
+            <div style="background: #f8f9fa; padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+                <p style="font-size: 12px; font-weight: bold; margin-bottom: 10px;">AVAILABILITY</p>
+                <button id="statusBtn" onclick="toggleStatus()" class="btn-main" style="background: #4caf50; width: 100%;">Online</button>
+            </div>
+            <nav class="nav-links" style="display: flex; flex-direction: column; gap: 20px;">
+                <a href="index.html" onclick="localStorage.clear()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header style="margin-bottom: 30px;">
+                <h1>Provider Panel: <span id="pName" style="color: var(--primary);">Loading...</span></h1>
+            </header>
+
+            <div class="card" style="border-bottom-color: #4caf50;">
+                <h3>Incoming Emergency Requests</h3>
+                <div id="requestContainer" style="margin-top: 20px; display: grid; gap: 15px;">
+                    <p style="color: #666;">Waiting for emergencies...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="provider.js"></script>
+</body>
+</html>
